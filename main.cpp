@@ -40,12 +40,12 @@ int main() {
         chrono::duration<double> elapsedBuiltin = endBI - startBI;
 
         //Start the timer - bubble sort
-        //auto startBS = chrono::high_resolution_clock::now();
+        auto startBS = chrono::high_resolution_clock::now();
         // Sort the array
-        //bubbleSort(testArrayCopy);
+        bubbleSort(testArrayCopy);
         //Stop the timer
-        //auto endBS = chrono::high_resolution_clock::now();
-        //chrono::duration<double> elapsedBubble = endBS - startBS;
+        auto endBS = chrono::high_resolution_clock::now();
+        chrono::duration<double> elapsedBubble = endBS - startBS;
 
         
         //Start the timer - merge sort
