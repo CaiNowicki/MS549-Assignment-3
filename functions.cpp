@@ -9,20 +9,21 @@
 using namespace std;
 
 void bubbleSort(vector<int>& arr) {
-	bool swapped = false;
+	bool swapped;
 	int n = arr.size();
-	for (size_t i = 0; i < n - 1 ; i++) {
-		if (arr[i] > arr[i + 1]) {
-			int temp;
-			temp = arr[i + 1];
-			arr[i + 1] = arr[i];
-			arr[i] = temp;
-			swapped = true;
-		}	
+	for (int i = 0; i < n - 1 ; i++) {
+		swapped = false;
+		for (int j = 0; j < n - i - 1; ++j) {
+			if (arr[j] > arr[j + 1]) {
+				// Swap elements
+				swap(arr[j], arr[j + 1]);
+				swapped = true;
+			}
+		}
+
+		if (!swapped) {
+			break;
 	}
-	n--; //reduces the range sorted after each pass
-	if (swapped) {
-		bubbleSort(arr);
 	}
 }
 
